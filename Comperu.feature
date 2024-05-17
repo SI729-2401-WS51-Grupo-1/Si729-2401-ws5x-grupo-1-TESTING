@@ -45,19 +45,7 @@ Feature: US06 Notificaciones de precios
     When haga clic en el botón de configuración de notificaciones
     Then la app me permitirá seleccionar el tipo de notificación que quiero recibir (Disponibilidad o oferta) y puedo elegir cómo quiero recibir la notificación (notificación de la app)
 
-Feature: US07 Búsqueda de tiendas
-
-  Scenario: Búsqueda por ubicación
-    Given estoy en la pantalla principal de la app
-    When selecciono la opción de búsqueda por ubicación
-    Then la app me muestra un mapa con mi ubicación actual y las tiendas cercanas y puedo hacer clic en una tienda para ver más detalles
-
-  Scenario: Filtración de búsqueda por ubicación
-    Given estoy en la pantalla de resultados de búsqueda por ubicación
-    When haga clic en el botón de filtro
-    Then la app muestra opciones de filtrado para distancia, tipo de tienda y otras características y la app actualiza los resultados para mostrar solo las tiendas que cumplen con los filtros seleccionados
-
-Feature: US08 Comentarios y reseñas de productos
+Feature: US07 Comentarios y reseñas de productos
 
   Scenario: Ver comentarios y reseñas
     Given estoy en la pantalla de detalles de un producto
@@ -70,7 +58,7 @@ Feature: US08 Comentarios y reseñas de productos
     Then la app me permite escribir un comentario o reseña sobre el producto y la app publica mi comentario o reseña
 
 
-Feature: US09 Opciones de pago
+Feature: US08 Opciones de pago
 
   Scenario: Ver opciones de pago
     Given estoy en la pantalla de detalles de una tienda
@@ -78,7 +66,7 @@ Feature: US09 Opciones de pago
     Then la app me muestra una lista de todas las opciones de pago disponibles en la tienda y puedo hacer clic en la opción de pago para ver más detalles de pago
 
 
-Feature: US10 Carrito de compras
+Feature: US09 Carrito de compras
 
   Scenario: Crear una lista de compras
     Given estoy en la pantalla principal de la app
@@ -90,21 +78,21 @@ Feature: US10 Carrito de compras
     When haga clic en el botón de agregar al carrito
     Then la app muestra que el producto se agregó exitosamente
 
-Feature: US11 Ofertas destacadas
+Feature: US10 Ofertas destacadas
 
   Scenario: Ver ofertas destacadas
     Given estoy en la pantalla de la app
     When desplazo hacia abajo en la pantalla
     Then la app me muestra una sección de ofertas destacadas y puedo ver los productos en oferta y la cantidad de descuento y puedo hacer clic en un producto para ver los detalles y comprarlo
 
-Feature: US12 Cambio de contraseñas
+Feature: US11 Contacto con la startup
 
-  Scenario: Cambiar contraseña
-    Given deseo cambiar mi contraseña
-    When yo lo desee
-    Then podré cambiar mi contraseña desde la pestaña de usuario
+  Scenario: Contacto con soporte
+    Given que el usuario está en la página de contacto
+    When el usuario ingresa su consulta y hace clic en enviar
+    Then la consulta será enviada al equipo de soporte y el usuario recibirá una confirmación de envío.
 
-Feature: US13 Autenticación de Usuario
+Feature: US12 Autenticación de Usuario
 
   Scenario: Registrar mi cuenta
     Given deseo registrarme
@@ -115,36 +103,37 @@ Feature: US13 Autenticación de Usuario
     Given estoy en inicio y quiero ingresar a mi cuenta
     When desee ingresar a mi cuenta en la app
     Then solo colocaré mi correo y mi contraseña para ingresar exitosamente
+    
+Feature: US13 Cambio de contraseñas
 
-Feature: US14 Contacto con la startup
+  Scenario: Cambiar contraseña
+    Given deseo cambiar mi contraseña
+    When yo lo desee
+    Then podré cambiar mi contraseña desde la pestaña de usuario
 
-  Scenario: Contacto con soporte
-    Given que el usuario está en la página de contacto
-    When el usuario ingresa su consulta y hace clic en enviar
-    Then la consulta será enviada al equipo de soporte y el usuario recibirá una confirmación de envío.
 
-Feature: US15 Registro de Tienda
+Feature: US14 Registro de Tienda
 
   Scenario: Registro de tienda
     Given que el emprendedor está en la página de registro de tienda
     When el emprendedor ingresa la información requerida y hace clic en registrar
     Then la tienda será creada en la plataforma y el emprendedor recibirá una confirmación de registro.
 
-Feature: US16 Gestión de productos
+Feature: US15 Gestión de productos
 
   Scenario: Gestión de productos
     Given que el emprendedor está en la interfaz de gestión de productos
     When el emprendedor agrega, edita o elimina un producto
     Then el catálogo de productos de la tienda se actualizará en la plataforma.
 
-Feature: US17 Notificación de pedidos
+Feature: US16 Notificación de pedidos
 
   Scenario: Notificación de pedidos
     Given que hay un nuevo pedido en la tienda del emprendedor
     When se realiza el pedido
     Then el emprendedor recibirá una notificación con los detalles del pedido.
 
-Feature: US18 Gestión de pedidos
+Feature: US17 Gestión de pedidos
 
   Scenario: Gestión de pedidos
     Given que el emprendedor está en la interfaz de gestión de pedidos
@@ -152,14 +141,14 @@ Feature: US18 Gestión de pedidos
     Then podrá ver los detalles de cada pedido y su estado actual.
 
 
-Feature: US19 Editar Tienda
+Feature: US18 Editar Tienda
 
   Scenario: Editar tienda
     Given que el emprendedor está en la página de gestión de perfil de la tienda
     When el emprendedor actualiza la información de su tienda
     Then los cambios se reflejarán en la información que se muestra a los usuarios finales.
 
-Feature: US20 Creación de Ofertas
+Feature: US19 Creación de Ofertas
 
   Scenario: Creación de ofertas
     Given que el emprendedor está en la interfaz de gestión de ofertas
@@ -167,21 +156,21 @@ Feature: US20 Creación de Ofertas
     Then la oferta será visible para los usuarios finales y aplicada a los productos seleccionados.
 
 
-Feature: US21 Notificación de Stock Bajo
+Feature: US20 Notificación de Stock Bajo
 
   Scenario: Notificación de stock bajo
     Given que el stock de un producto está por agotarse
     When el stock llegue a un nivel mínimo
     Then el emprendedor recibirá una notificación para reabastecerse.
 
-Feature: US22 Plataforma Responsive
+Feature: US21 Plataforma Responsive
 
   Scenario: Uso en dispositivo móvil
     Given que el usuario está utilizando la plataforma en su dispositivo móvil
     When el usuario navega por la plataforma
     Then la interfaz se ajusta a la pantalla del dispositivo sin problemas.
 
-Feature: US23 Botones de acción
+Feature: US22 Botones de acción
 
   Scenario: Uso de botones de acción
     Given que el usuario está navegando por la plataforma
